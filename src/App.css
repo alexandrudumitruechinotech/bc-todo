@@ -1,0 +1,14 @@
+.card-title {
+    color: #e66465 !important;
+}
+.main {
+    background: linear-gradient(#e66465, #9198e5);
+}
+
+input:focus {
+    box-shadow: none !important;
+}
+
+.delete-icon:hover {
+    cursor: pointer;
+}
