@@ -31,11 +31,12 @@ export const {addTask, deleteTask, updateTask} = taskSlice.actions
 export const selectFilteredTasks = createSelector(
     [(state) => state.tasks, (state, type) => type],
     (tasks, type) => tasks.filter(task => {
-        if (type === filterTypes.COMPLETED) {
-            return task.completed === true
-        } else if (type === filterTypes.ACTIVE) {
-            return task.completed === false
+        switch (type) {
+            case filterTypes.COMPLETED:
+                return task.completed === true
+            case filterTypes.ACTIVE:
+                return task.completed === false
+            default: return true
         }
-        return true
     }))
 export default taskSlice.reducer
